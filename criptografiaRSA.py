@@ -104,23 +104,22 @@ def Decription(private_key):
 	print("\033[m")
 
 while True:
-	Clear()
-	option = int(input("""
-1 - Encript\n
-2 - Decript\n
-0 - Exit\n"""))
-	if option == 1:
-		msg = str(input("Enter message to encrypt-> "))
-		
-		Encription(msg)
-		n = str(input("\nPress ENTER to exit\n"))
-	elif option == 2:
-		public = int(input("Enter the private key "))
-		
+	try:
 		Clear()
-		Decription(public)
-		n = str(input("\nPress ENTER to exit\n"))
-	elif option == 0:
-		break
-	else:
-		print("\nInvalid Option\n")
+		option = int(input("""1 - Encript\n2 - Decript\n0 - Exit\n"""))
+		if option == 1:
+			msg = str(input("Enter message to encrypt-> "))
+			Encription(msg)
+			n = str(input("\nPress ENTER to exit\n"))
+		elif option == 2:
+			public = int(input("Enter the private key "))
+			Clear()
+			Decription(public)
+			n = str(input("\nPress ENTER to exit\n"))
+		elif option == 0:
+			break
+		else:
+			print("\nInvalid Option\n")
+	except(ValueError):
+		print("Invalid value\n")
+		n = str(input("\nPress ENTER to Return\n"))
