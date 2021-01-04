@@ -1,6 +1,7 @@
 ﻿from random import randint
 import math,os
 
+
 #globals variables
 Public_Key = []
 Prive_Key = 0
